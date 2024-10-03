@@ -1,0 +1,55 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(154, 12, 154), #560835);
+    font-family: Arial, sans-serif;
+}
+
+/* Container to hold all content */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Content styles for text and button */
+.content {
+    color: white;
+    text-align: left;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.consult-button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.consult-button:hover {
+    background-color: white;
+    color: violet;
+}
+
+.basket {
+    display: flex;
+    justify-content: center;
+   
+    height: 600px;
+    width: 500px;
+}
+

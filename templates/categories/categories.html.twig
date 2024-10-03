@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/categories.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="categories-container">
+    {% for category in categories %}
+        <div class="category-item">
+           <a href="{{ path('app_smallbussineses_categories', { 'id': category.id }) }}">
+                <div class="category-card">
+                    <h3>{{ category.getCategoryName() }}</h3>
+                </div>
+            </a>
+        </div>
+        
+        {# After every 4 categories, add a row break #}
+        {% if loop.index is divisible by(4) %}
+            <div class="clear"></div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

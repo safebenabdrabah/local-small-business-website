@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SmallBusiness{% endblock %}
+
+{% block body %}
+    <h1>Edit SmallBusiness</h1>
+
+    {{ include('small_business/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_small_business_index') }}">back to list</a>
+
+    {{ include('small_business/_delete_form.html.twig') }}
+{% endblock %}

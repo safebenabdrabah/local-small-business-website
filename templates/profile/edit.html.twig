@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/profile/edit.css') }}">
+{% endblock %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block body %}
+    <h1>Edit Profile</h1>
+
+    {{ include('profile/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+    {{ include('profile/_delete_form.html.twig') }}
+{% endblock %}

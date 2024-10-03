@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SmallBusiness{% endblock %}
+
+{% block body %}
+    <h1>SmallBusiness</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ small_business.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ small_business.name }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td><img src="{{ small_business.logo }}" alt=""></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ small_business.description }}</td>
+            </tr>
+            <tr>
+                <th>Phone_number</th>
+                <td>{{ small_business.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ small_business.address }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_page</th>
+                <td>{{ small_business.facebookPage }}</td>
+            </tr>
+            <tr>
+                <th>Instagram_page</th>
+                <td>{{ small_business.InstagramPage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_small_business_index') }}">back to list</a>
+
+    <a href="{{ path('app_small_business_edit', {'id': small_business.id}) }}">edit</a>
+
+    {{ include('small_business/_delete_form.html.twig') }}
+{% endblock %}

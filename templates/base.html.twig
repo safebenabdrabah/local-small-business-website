@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ asset('assets/css/basestyle.css') }}">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+          
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <div class="home-button"> <a href="{{ path('app_first_page') }}" >Home</a></div>
+                <div class="auth-buttons">
+                    {% if app.user %}
+                        <!-- User is logged in -->
+                        <form action="{{ path('app_logout') }}" method="post">
+                            <button type="submit" class="logout-button">Logout</button>
+                        </form>
+                        {% if app.user.profile %}
+                            <!-- If the user has a profile, show the profile link -->
+                            <a href="{{ path('app_profile_show', {'id': app.user.profile.id}) }}" class="profile-button">Profile</a>
+                        {% else %}
+                            <!-- If the user has no profile, show a message or alternative action -->
+                            <p></p>
+                        {% endif %}
+                    {% else %}
+                        <!-- User is not logged in -->
+                        <a href="{{ path('app_login') }}" class="login-button">Login</a>
+                        <a href="{{ path('app_register')}}" class="registration-button">Register</a>
+                    {% endif %}
+                </div>
+                <div class="signup-buttons"></div>
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+    </body>
+</html>

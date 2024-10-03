@@ -1,0 +1,22 @@
+ {% extends 'base.html.twig' %}
+
+
+       {% block title %}Tunisia's Small Businesses{% endblock %}
+        
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        {% endblock %}
+
+  
+      {% block body %}
+      <div class="container">
+        <div class="content">
+            <h1>Tunisia's Small Businesses</h1>
+            <h4>Discover and support local businesses across Tunisia.</h4>
+            <button class="consult-button"><a href="{{ path('app_categories') }}">Consult</button>
+        </div>
+           <div class="basket"><img src="{{ asset('images/shopping1.jpg') }}"></div>
+      </div>
+      {% endblock %}
+ 

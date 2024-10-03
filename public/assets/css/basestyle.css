@@ -1,0 +1,79 @@
+/* Header styling */
+header {
+    background-color:#5608354a; 
+    padding: 10px 20px;
+   
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+/* Container for header content */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between Home and auth buttons */
+    align-items: center; /* Align items vertically */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the header container */
+}
+
+/* Home button styling */
+.home-button {
+    flex-grow: 1; /* Ensures the Home button takes all available space to the left */
+}
+
+.home-button a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* Home button hover effect */
+.home-button a:hover {
+    color: #f8e1f1; /* Light color on hover */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+}
+
+/* Logo styling */
+.logo a {
+    text-decoration: none;
+    font-size: 2rem; /* Adjust size as needed */
+    color: #560835; /* Dark pink color */
+    margin-left: 20px; /* Space between logo and button */
+}
+
+/* Auth buttons styling */
+.auth-buttons {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.auth-buttons a,
+.auth-buttons button {
+    text-decoration: none;
+    color: #560835; /* Dark pink color */
+    background-color: #fff; /* White background */
+    border: 2px solid #560835; /* Dark pink border */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; /* Adjust size as needed */
+}
+
+.auth-buttons button {
+    background-color: #560835; /* Dark pink background for logout */
+    color: #fff; /* White text */
+}
+
+.auth-buttons a:hover,
+.auth-buttons button:hover {
+    background-color: #560835; /* Dark pink background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #560835; /* Dark pink border on hover */
+}

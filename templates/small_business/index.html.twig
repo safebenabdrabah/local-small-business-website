@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SmallBusiness index{% endblock %}
+
+{% block body %}
+    <h1>SmallBusiness index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Logo</th>
+                <th>Description</th>
+                <th>Phone_number</th>
+                <th>Address</th>
+                <th>Facebook_page</th>
+                <th>Instagram_page</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for small_business in small_businesses %}
+            <tr>
+                <td>{{ small_business.id }}</td>
+                <td>{{ small_business.name }}</td>
+                <td>{{ small_business.logo }}</td>
+                <td>{{ small_business.description }}</td>
+                <td>{{ small_business.phoneNumber }}</td>
+                <td>{{ small_business.address }}</td>
+                <td>{{ small_business.facebookPage }}</td>
+                <td>{{ small_business.InstagramPage }}</td>
+                <td>
+                    <a href="{{ path('app_small_business_show', {'id': small_business.id}) }}">show</a>
+                    <a href="{{ path('app_small_business_edit', {'id': small_business.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_small_business_new') }}">Create new</a>
+{% endblock %}

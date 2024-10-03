@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SmallBusiness{% endblock %}
+
+{% block body %}
+    <h1>Create new SmallBusiness</h1>
+
+    {{ include('small_business/_form.html.twig') }}
+
+    <a href="{{ path('app_small_business_index') }}">back to list</a>
+{% endblock %}

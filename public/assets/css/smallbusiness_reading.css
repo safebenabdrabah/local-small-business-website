@@ -1,0 +1,137 @@
+/* smallbusiness_reading.css */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
+.business-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.business-article {
+    padding: 30px;
+}
+
+.business-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.business-title {
+    font-size: 2.5rem;
+    color: #560835;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.business-logo {
+    max-width: 200px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.business-details {
+    text-align: center;
+}
+
+.business-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #666;
+    padding: 0 20px;
+}
+
+.business-info {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.business-info li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.business-info a {
+    color: #560835;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.business-info a:hover {
+    text-decoration: underline;
+}
+
+.business-categories {
+    margin-top: 50px;
+}
+
+.business-categories h3 {
+    font-size: 1.5rem;
+    color: #560835;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.business-categories ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.business-categories ul li {
+    display: inline-block;
+    margin: 10px 15px;
+    padding: 8px 15px;
+    background-color: #f8e1f1;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: #560835;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.business-categories ul li:hover {
+    background-color: #560835;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .business-container {
+        padding: 15px;
+    }
+
+    .business-title {
+        font-size: 2rem;
+    }
+
+    .business-logo {
+        max-width: 150px;
+    }
+
+    .business-description {
+        font-size: 1.1rem;
+    }
+
+    .business-info li {
+        font-size: 1rem;
+    }
+
+    .business-categories ul li {
+        font-size: 0.9rem;
+    }
+}

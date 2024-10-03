@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ smallBusiness.getName() }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/smallbusiness_reading.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="business-container">
+    <article class="business-article">
+        <div class="business-header">
+            <img class="business-logo" src="{{ smallBusiness.getLogo() }}" alt="Logo of {{ smallBusiness.getName() }}">
+            <h1 class="business-title">{{ smallBusiness.getName() }}</h1>
+        </div>
+
+        <section class="business-details">
+            <p class="business-description">
+                {{ smallBusiness.getDescription()|default('No description available') }}
+            </p>
+
+            <ul class="business-info">
+                <li><strong>Phone Number:</strong> {{ smallBusiness.getPhoneNumber() }}</li>
+                {% if smallBusiness.getAddress() %}
+                    <li><strong>Address:</strong> {{ smallBusiness.getAddress() }}</li>
+                {% endif %}
+                {% if smallBusiness.getFacebookPage() %}
+                    <li><strong>Facebook Page:</strong> <a href="{{ smallBusiness.getFacebookPage() }}" target="_blank">{{ smallBusiness.getFacebookPage() }}</a></li>
+                {% endif %}
+                {% if smallBusiness.getInstagramPage() %}
+                    <li><strong>Instagram Page:</strong> <a href="{{ smallBusiness.getInstagramPage() }}" target="_blank">{{ smallBusiness.getInstagramPage() }}</a></li>
+                {% endif %}
+            </ul>
+
+            <section class="business-categories">
+                <h3>Categories</h3>
+                <ul>
+                    {% for category in smallBusiness.getCategories() %}
+                        <li><a href="{{ path('app_smallbussineses_categories', { 'id': category.id }) }}">{{ category.getCategoryName() }}</a></li>
+                    {% else %}
+                        <li> No categories associated with this business.</li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </section>
+    </article>
+</div>
+{% endblock %}

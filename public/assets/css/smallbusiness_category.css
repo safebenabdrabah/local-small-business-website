@@ -1,0 +1,63 @@
+/* Centered page title below the header */
+.page-title {
+    text-align: center;
+    margin-top: 80px; /* Space from the top (after header) */
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.page-title h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* General styles for the grid layout */
+.small-businesses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Styling for individual business cards */
+.small-business-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.small-business-card:hover {
+    transform: translateY(-5px);
+}
+
+.business-logo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.business-content {
+    padding: 15px;
+}
+
+.business-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.business-content p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .small-businesses-grid {
+        grid-template-columns: 1fr;
+    }
+}
